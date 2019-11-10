@@ -1,0 +1,53 @@
+html {
+  font-family: Helvetica, Arial, sans-serif;
+  background:
+    linear-gradient(180deg, rgba(54, 68, 98, 0.8), rgba(0, 0, 0, 0.253) 90.71%),
+    linear-gradient(127deg, rgba(70, 91, 117, 0.8), rgba(75, 92, 128, 0.657) 70.71%);
+
+  height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+main {
+  width: fit-content;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+#select-wrapper {
+  border: 0.5rem solid whitesmoke;
+  margin: 15vh auto 8rem;
+}
+
+.time-select {
+  padding: 1rem;
+}
+
+.time-select > select {
+  font-size: 1.2rem;
+  margin: 0 0.4rem;
+  vertical-align: middle;
+}
+
+.time-select > label {
+  margin-right: 1rem;
+  vertical-align: text-bottom;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+footer > * {
+  color: black;
+  vertical-align: middle;
+}
+
+footer > #repo:hover {
+  color: white;
+}
