@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/timecard-converter/static/css/main.cf60f4b9.chunk.css",
+    "main.js": "/timecard-converter/static/js/main.dc51eca3.chunk.js",
+    "main.js.map": "/timecard-converter/static/js/main.dc51eca3.chunk.js.map",
+    "runtime-main.js": "/timecard-converter/static/js/runtime-main.a153445a.js",
+    "runtime-main.js.map": "/timecard-converter/static/js/runtime-main.a153445a.js.map",
+    "static/js/2.57a7d0fd.chunk.js": "/timecard-converter/static/js/2.57a7d0fd.chunk.js",
+    "static/js/2.57a7d0fd.chunk.js.map": "/timecard-converter/static/js/2.57a7d0fd.chunk.js.map",
+    "index.html": "/timecard-converter/index.html",
+    "precache-manifest.d072c82975866371bad9ef8f81f5803d.js": "/timecard-converter/precache-manifest.d072c82975866371bad9ef8f81f5803d.js",
+    "service-worker.js": "/timecard-converter/service-worker.js",
+    "static/css/main.cf60f4b9.chunk.css.map": "/timecard-converter/static/css/main.cf60f4b9.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a153445a.js",
+    "static/js/2.57a7d0fd.chunk.js",
+    "static/css/main.cf60f4b9.chunk.css",
+    "static/js/main.dc51eca3.chunk.js"
+  ]
+}
