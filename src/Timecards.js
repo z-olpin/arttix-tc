@@ -28,11 +28,13 @@ const TimeCards = () => {
   return (
     <>
       <header>
-        <div onClick={() => infoVisible ? setInfoVisible(false) : setInfoVisible(true)} id="info">Info</div>
+        <div onClick={() => infoVisible ? setInfoVisible(false) : setInfoVisible(true)} id="info">
+          {infoVisible ? 'X' : 'info'}
+        </div>
         {infoVisible &&
           <div id="info-display" style={{ visibility: infoVisible ? 'visible' : 'hidden' }}>
             This application was created for ArtTix. It calculates a shift's duration and rounds it to the nearest quarter-hour, per ArtTix reporting requirements.
-      </div>}
+          </div>}
       </header>
       <main>
         <table id="select-wrapper">
