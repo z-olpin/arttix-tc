@@ -3,29 +3,35 @@ import './Timecards.css'
 import cc from "./cc.png";
 
 const TimeCards = () => {
-  const [inHour, setInHour] = useState(360)
-  const [inMin, setInMin] = useState(0)
-  const [outHour, setOutHour] = useState(360)
-  const [outMin, setOutMin] = useState(0)
-  const [diff, setDiff] = useState(0)
-  const [infoVisibile, setInfoVisible] = useState(false)
-
+  const [inHour, setInHour] = useState()
+  const [inMin, setInMin] = useState()
+  const [outHour, setOutHour] = useState()
+  const [outMin, setOutMin] = useState()
+  const [diff, setDiff] = useState()
+  const [infoVisible, setInfoVisible] = useState(false)
+  
+  
   useEffect(() => {
     if (inHour >= 0 && inMin >= 0 && outHour >= 0 && outMin >= 0) {
       let _diff = outHour + outMin - inHour + inMin
       let diffHours = Math.trunc(_diff / 60)
       let diffMinutes = _diff % 60
       let diffQuartile = Math.round(diffMinutes / 15) * 25
-      setDiff(Number(`${diffHours}.${diffQuartile}`))
+      let quarterRoundedDiff = Number(`${diffHours}.${diffQuartile}`)
+      if (Object.is(quarterRoundedDiff, NaN)) {
+        setDiff('Invalid Input')
+      } else {
+        setDiff(quarterRoundedDiff)
+      }
     }
   }, [outMin, outHour, inMin, inHour])
 
   return (
     <>
       <header>
-        <div onMouseOver={() => setInfoVisible(true)} onMouseLeave={() => setInfoVisible(false)} id="info">Info</div>
-        {infoVisibile &&
-          <div id="info-display" style={{ display: infoVisibile ? 'block' : 'none' }}>
+        <div onClick={() => infoVisible ? setInfoVisible(false) : setInfoVisible(true)} id="info">Info</div>
+        {infoVisible &&
+          <div id="info-display" style={{ display: infoVisible ? 'block' : 'none' }}>
             This application was created for ArtTix. It calculates a shift's duration and rounds it to the nearest quarter-hour, per ArtTix reporting requirements.
       </div>}
       </header>
@@ -34,6 +40,7 @@ const TimeCards = () => {
           <div className="time-select">
             <label>IN</label>
             <select onChange={e => setInHour(Number(e.target.value))}>
+        <option value={undefined}>{'HH'}</option>
               {[['6', 360], ['7', 420],
               ['8', 480], ['9', 540],
               ['10', 600], ['11', 660],
@@ -47,6 +54,7 @@ const TimeCards = () => {
             </select>
             :
           <select onChange={e => setInMin(Number(e.target.value))}>
+          <option value={undefined}>{'MM'}</option>
               {[
                 0, 1, 2, 3, 4, 5, 6,
                 7, 8, 9, 10, 11, 12, 13,
@@ -64,6 +72,8 @@ const TimeCards = () => {
           <div className="time-select">
             <label>OUT</label>
             <select onChange={e => setOutHour(Number(e.target.value))}>
+            <option value={undefined}>{'HH'}</option>
+
               {[['6', 360], ['7', 420],
               ['8', 480], ['9', 540],
               ['10', 600], ['11', 660],
@@ -73,11 +83,12 @@ const TimeCards = () => {
               ['6', 1080], ['7', 1140],
               ['8', 1200], ['9', 1260],
               ['10', 1320]
-              ].map(h => <option value={h[1]}>{h[0]}</option>)}
+            ].map(h => <option value={h[1]}>{h[0]}</option>)}
 
             </select>
             :
           <select onChange={e => setOutMin(Number(e.target.value))}>
+            <option value={undefined}>{'MM'}</option>
               {[
                 0, 1, 2, 3, 4, 5, 6,
                 7, 8, 9, 10, 11, 12, 13,
