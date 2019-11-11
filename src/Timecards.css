@@ -44,21 +44,19 @@ html {
 }
 
 main {
-  width: 40vw;
   margin: 0 auto;
   text-align: center;
   font-size: 2.5rem;
 }
 
 #select-wrapper {
+  border-collapse: collapse;
   margin: 15vh auto 8rem;
-  border: 0.4rem solid whitesmoke;
 }
 
 .time-select {
   padding: 2rem;
-  border: 0.4rem solid whitesmoke;
-  
+  border: 0.6rem solid whitesmoke;
 }
 
 .time-select > select {
@@ -96,10 +94,6 @@ footer > #repo:hover {
     font-size: 0.8rem;
   }
 
-  main {
-    width: 55vw;
-  }
-
   #select-wrapper {
     margin: 6rem auto;
   }
@@ -118,9 +112,5 @@ footer > #repo:hover {
 @media (max-width: 600px) {
   html {
     font-size: 0.5rem;
-  }
-
-  main {
-    width: 70vw;
   }
 }
