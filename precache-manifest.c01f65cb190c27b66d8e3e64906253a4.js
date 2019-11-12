@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b3da74756b723f1d7796bea6e4691a6",
+    "revision": "9a928e0f3110df847e0c0d53d679ffc0",
     "url": "/arttix-tc/index.html"
   },
   {
