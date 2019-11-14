@@ -136,7 +136,8 @@ input[type="time"] {
   
   #info-display {
     position: relative;
-    width: 50vw;
+    width: 80vw;
+    left: 0.45rem;
     margin: 0 auto;
     padding: 1rem;
     line-height: 2.2rem;
@@ -148,5 +149,9 @@ input[type="time"] {
 @media (max-width: 600px) {
   html {
     font-size: 0.5rem;
+  }
+  #info-display {
+    font-size: 2.8rem;
+    line-height: 3.3rem;
   }
 }
