@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/arttix-tc/static/css/main.6a749146.chunk.css",
+    "main.css": "/arttix-tc/static/css/main.2355072f.chunk.css",
     "main.js": "/arttix-tc/static/js/main.a86a66d0.chunk.js",
     "main.js.map": "/arttix-tc/static/js/main.a86a66d0.chunk.js.map",
     "runtime-main.js": "/arttix-tc/static/js/runtime-main.52b9feac.js",
@@ -8,14 +8,14 @@
     "static/js/2.57a7d0fd.chunk.js": "/arttix-tc/static/js/2.57a7d0fd.chunk.js",
     "static/js/2.57a7d0fd.chunk.js.map": "/arttix-tc/static/js/2.57a7d0fd.chunk.js.map",
     "index.html": "/arttix-tc/index.html",
-    "precache-manifest.e130d5719f9fe46016c171588bd41152.js": "/arttix-tc/precache-manifest.e130d5719f9fe46016c171588bd41152.js",
+    "precache-manifest.6664d9189ae02fd410816d02cd6f0fb7.js": "/arttix-tc/precache-manifest.6664d9189ae02fd410816d02cd6f0fb7.js",
     "service-worker.js": "/arttix-tc/service-worker.js",
-    "static/css/main.6a749146.chunk.css.map": "/arttix-tc/static/css/main.6a749146.chunk.css.map"
+    "static/css/main.2355072f.chunk.css.map": "/arttix-tc/static/css/main.2355072f.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.52b9feac.js",
     "static/js/2.57a7d0fd.chunk.js",
-    "static/css/main.6a749146.chunk.css",
+    "static/css/main.2355072f.chunk.css",
     "static/js/main.a86a66d0.chunk.js"
   ]
 }
