@@ -26,6 +26,7 @@ body {
   font-size: 2.6rem;
 }
 
+
 #info:hover {
   cursor: pointer;
   transition-duration: 0.5s;
@@ -33,10 +34,26 @@ body {
   text-decoration: underline;
 }
 
-#info:not(:hover) {
+#info:not(:hover) #x {
+  text-decoration: none;
   transition-duration: 0.5s;
   letter-spacing: normal;
-  text-decoration: none;
+}
+#x {
+  font-weight: 700;
+  position: absolute;
+  top: 1rem;
+  right: 1.3rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  color: red;
+  font-size: 2.6rem;
+}
+
+#x:hover {
+  cursor: pointer;
+  transition-duration: 0.2s;
+  color: rgb(231, 2, 2)
 }
 
 #info-display {

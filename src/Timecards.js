@@ -9,8 +9,10 @@ const TimeCards = () => {
   const [roundedDiff, setRoundedDiff] = useState()
 
   useEffect(() => {
-    document.getElementById('in').value = '09:00'
-    document.getElementById('out').value = '17:00'
+    document.getElementById('in').value = "08:00"
+    document.getElementById('out').value = "10:30"
+    setInTime(480)
+    setOutTime(630)
   }, [])
 
   useEffect(() => {
@@ -21,10 +23,17 @@ const TimeCards = () => {
       let quarterRoundedMin = Math.round(remainingMins / 15) * 25
       let stringHours = hours.toString()
       let stringMin = quarterRoundedMin.toString()
+      let stringTime = stringHours + '.' + stringMin
+      if (stringTime[stringTime.length-1] === '0') {
+        stringTime = stringTime.slice(0,stringTime.length-1)
+        if (stringTime[stringTime.length-1] === '.') {
+          stringTime = stringTime.slice(0,stringTime.length-1)
+        }
+      }
       if (diff < 0) {
         setRoundedDiff('invalid input')
       } else
-        setRoundedDiff(`${stringHours}.${stringMin}`)
+        setRoundedDiff(`${stringTime}`)
       }
     }, [inTime, outTime])
 
@@ -43,8 +52,10 @@ const TimeCards = () => {
   return (
     <>
       <header>
-        <div onClick={() => infoVisible ? setInfoVisible(false) : setInfoVisible(true)} id="info">
-          {infoVisible ? 'X' : 'info'}
+        <div>
+          {infoVisible
+            ? <div id="x" onClick={() => setInfoVisible(false)}>X </div>
+            : <div id="info" onClick={() => setInfoVisible(true)}>info</div>}
         </div>
         {infoVisible &&
           <div id="info-display" style={{ visibility: infoVisible ? 'visible' : 'hidden' }}>
@@ -57,7 +68,7 @@ const TimeCards = () => {
           <tr>
             <td className='time-select'>
               <label>IN:</label>
-              <input onMouseOver={() => {}} id="in" type="time" onChange={e => changeIn(e.target.value)}></input>
+              <input id="in" type="time" onChange={e => changeIn(e.target.value)}></input>
             </td>
           </tr>
           <tr>
