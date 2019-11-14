@@ -2,7 +2,7 @@
 
 ## Preview
 
-<img src="https://github.com/vxxce/arttix-tc/blob/master/public/screenshot.png" alt="screenshot" width="900px" />
+<img src="https://github.com/vxxce/arttix-tc/blob/master/public/screenshot.png" alt="screenshot" width="900px"  />
 
 ## About
 
