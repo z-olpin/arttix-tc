@@ -8,47 +8,6 @@ const TimeCards = () => {
   const [outTime, setOutTime] = useState()
   const [roundedDiff, setRoundedDiff] = useState()
 
-  useEffect(() => {
-    document.getElementById('in').value = "08:00"
-    document.getElementById('out').value = "10:30"
-    setInTime(480)
-    setOutTime(630)
-  }, [])
-
-  useEffect(() => {
-    if (inTime >= 0 && outTime >= 0) {
-      let diff = outTime - inTime
-      let hours = Math.trunc(diff / 60)
-      let remainingMins = diff % 60
-      let quarterRoundedMin = Math.round(remainingMins / 15) * 25
-      let stringHours = hours.toString()
-      let stringMin = quarterRoundedMin.toString()
-      let stringTime = stringHours + '.' + stringMin
-      if (stringTime[stringTime.length-1] === '0') {
-        stringTime = stringTime.slice(0,stringTime.length-1)
-        if (stringTime[stringTime.length-1] === '.') {
-          stringTime = stringTime.slice(0,stringTime.length-1)
-        }
-      }
-      if (diff < 0) {
-        setRoundedDiff('invalid input')
-      } else
-        setRoundedDiff(`${stringTime}`)
-      }
-    }, [inTime, outTime])
-
-  const changeIn = time => {
-    let [hour, min] = time.split(':')
-    let totalInMin = (Number(hour) * 60) + Number(min)
-    setInTime(totalInMin)
-  }
-
-  const changeOut = time => {
-    let [hour, min] = time.split(':')
-    let totalOutMin = (Number(hour) * 60) + Number(min)
-    setOutTime(totalOutMin)
-  }
-
   return (
     <>
       <header>
@@ -63,23 +22,7 @@ const TimeCards = () => {
           </div>}
       </header>
       <main>
-        <table id="select-wrapper">
-          <tbody>
-          <tr>
-            <td className='time-select'>
-              <label>IN:</label>
-              <input id="in" type="time" onChange={e => changeIn(e.target.value)}></input>
-            </td>
-          </tr>
-          <tr>
-            <td className='time-select'>
-              <label>OUT:</label>
-              <input id="out" type="time" onChange={e => changeOut(e.target.value)}></input>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-        <h2>Total hours: {roundedDiff}</h2>
+        <p style={{width: '50vw', margin: '32vh auto' }}>Heyo, sorry, this web-app had a bug. I'm fixing it now and will republish soon.</p>
       </main>
       <footer>
         <img id="cc" src={cc} width='48px' alt="CC license - Use freely"></img>Use freely.&nbsp;
