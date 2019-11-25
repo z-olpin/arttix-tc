@@ -1,6 +1,6 @@
 ## <a href="https://vxxce.github.io/arttix-tc" alt="live demo link">Live demo</a>
 
-Best in Chrome/chromium, firefox, or safari. Works in Edge, but it's a bit clunky. Not supporting IE.
+Best in Chrome/chromium or firefox. Okay in Safari. Works in Edge, but it's a bit clunky. Not supporting IE.
 
 ## Preview
 
