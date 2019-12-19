@@ -2,7 +2,7 @@
 This application was created for ArtTix. It calculates a shift's duration and rounds it to the nearest quarter-hour per ArtTix reporting requirements.
 
 ## Usage
-Best in Chrome/chromium or firefox. Okay in Safari. Works in Edge, but it's a bit clunky. Not supporting IE.
+Works best in Chrome/chromium or Firefox. Okay in Safari. Works in Edge, but interface is lacking and you must use 24-hr time. Internet Explorer is not supported.
 
 ## <a href="https://vxxce.github.io/arttix-tc" alt="live demo link">Live demo</a>
 
