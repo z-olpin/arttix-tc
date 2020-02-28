@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import './Timecards.css'
 import cc from "./cc.png"
+import brackets from "./brackets.png";
 
 const TimeCards = () => {
-  const [infoVisible, setInfoVisible] = useState(false)
   const [inTime, setInTime] = useState()
   const [outTime, setOutTime] = useState()
   const [roundedDiff, setRoundedDiff] = useState()
+  const [menuVisible, setMenuVisible] = useState(false)
 
   useEffect(() => {
-    document.getElementById('in').value = "08:00"
-    document.getElementById('out').value = "10:30"
-    setInTime(480)
-    setOutTime(630)
+    document.getElementById('in').value = "09:32"
+    document.getElementById('out').value = "14:56"
+    setInTime(572)
+    setOutTime(896)
   }, [])
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const TimeCards = () => {
         }
       }
       if (diff < 0) {
-        setRoundedDiff('invalid input')
+        setRoundedDiff('?')
       } else
         setRoundedDiff(stringTime)
       }
@@ -53,40 +54,43 @@ const TimeCards = () => {
     setOutTime(totalOutMin)
   }
 
+  const toggleInfo = e => {
+    e.preventDefault()
+    menuVisible
+      ? e.target.parentElement.parentElement.style.transform = "translate3d(-100vw, 0, 0)"
+      : e.target.previousSibling.style.transform = "translate3d(0vw, 0, 0)";
+     setMenuVisible(!menuVisible) 
+  }
+
   return (
     <>
       <header>
-        <div>
-          {infoVisible
-            ? <div id="x" onClick={() => setInfoVisible(false)}>X </div>
-            : <div id="info" onClick={() => setInfoVisible(true)}>info</div>}
+        <div id="infoPane">
+          <div><div id="hideInfo" onClick={e => toggleInfo(e)}></div></div>
+          <p>
+            This application was created for ArtTix.
+            It calculates a shift's duration and rounds it to the nearest quarter-hour,
+            per ArtTix reporting requirements.
+          </p>
+          <p>
+            <a href="https://vxxce.github.io/">Github</a>
+            <a href="mailto:info@zacharyolp.in">Contact</a>
+          </p>
         </div>
-        {infoVisible &&
-          <div id="info-display" style={{ visibility: infoVisible ? 'visible' : 'hidden' }}>
-            This application was created for ArtTix. It calculates a shift's duration and rounds it to the nearest quarter-hour, per ArtTix reporting requirements.
-          </div>}
+        <div id="info" onClick={e => toggleInfo(e)}>INFO</div>
       </header>
       <main>
-        <table id="select-wrapper">
-          <tbody>
-          <tr>
-            <td className='time-select'>
-              <label>IN:</label>
-              <input id="in" type="time" onChange={e => changeIn(e.target.value)}></input>
-            </td>
-          </tr>
-          <tr>
-            <td className='time-select'>
-              <label>OUT:</label>
-              <input id="out" type="time" onChange={e => changeOut(e.target.value)}></input>
-            </td>
-          </tr>
-          </tbody>
-        </table>
-        <h2>Total hours: {roundedDiff}</h2>
+        <div id="time-wrapper">
+          <label>IN:</label>
+          <input id="in" type="time" onChange={e => changeIn(e.target.value)}></input>
+          <label>OUT:</label>
+          <input id="out" type="time" onChange={e => changeOut(e.target.value)}></input>
+        <img id="sum" src={brackets} alt="bracket"></img>
+        <p id="total">{roundedDiff}</p>
+        </div>
       </main>
       <footer>
-        <img id="cc" src={cc} width='48px' alt="CC license - Use freely"></img>Use freely.&nbsp;
+        <a href="https://creativecommons.org/licenses/by/4.0/"><img id="cc" src={cc} alt="CC BY license - Use freely"></img></a>
         <a id="repo" href="http://github.com/vxxce/timecard-converter">Zachary Olpin</a>
       </footer>
     </>
