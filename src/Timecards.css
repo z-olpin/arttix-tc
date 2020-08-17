@@ -2,12 +2,13 @@
   font-family: Helvetica, Arial, sans-serif;
   background-color: #e6decc;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   color: #222222;
   font-size: 8px;
 }
 
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -16,11 +17,11 @@ body {
 #info {
   font-weight: 700;
   position: absolute;
-  top: 1rem;
-  right: 1.6rem;
-  padding: 1rem;
+  top: 0;
+  right: 0;
+  margin: 3rem;
   text-transform: uppercase;
-  font-size: 5vw;
+  font-size: 6rem;
 }
 
 
@@ -37,14 +38,15 @@ body {
   position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   left: 0;
   top: 0;
   transform: translate3d(calc(-100vw), 0, 0);
   transition: ease 500ms;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   z-index: 3;
 }
@@ -60,7 +62,7 @@ body {
   right: 1rem;
   color: #8bbbc6;
   cursor: pointer;
-  padding: 2rem;
+  margin: 2rem;
   width: 5rem;
   height: 5rem;
 }
@@ -92,8 +94,9 @@ body {
 }
 
 #infoPane > p {
-  padding: 1rem 4rem;
-  line-height: 7rem;
+  margin: 1rem 3.5rem;
+  line-height: 5rem;
+  max-width: 700px;
 }
 
 main {
@@ -136,13 +139,13 @@ label {
 
 #in, #out {
   font-family: 'Courier New', monospace;
-justify-self: end;
-font-size: 4.5vw;
-color: #45648a;
-background-color: #e6decc;
-border: none;
-width: min-content;
-grid-column: 4 / span 6;
+  justify-self: end;
+  font-size: 4.5vw;
+  color: #45648a;
+  background-color: #e6decc;
+  border: none;
+  width: min-content;
+  grid-column: 4 / span 6;
 }
 
 input[type="time"]:hover {
@@ -160,8 +163,8 @@ input[type="time"]:hover {
 footer {
   position: absolute;
   bottom: 0;
-  padding: 1rem;
-  width: calc(100vw - 2rem);
+  margin: 3rem;
+  width: calc(100vw - 6rem);
 }
 
 footer > * {
@@ -174,10 +177,10 @@ footer > #repo:hover {
 }
   
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
   #info {
-    font-size: 7vw;
+    font-size: 10vw;
   }
   
   #in, #out {

@@ -68,9 +68,8 @@ const TimeCards = () => {
         <div id="infoPane">
           <div><div id="hideInfo" onClick={e => toggleInfo(e)}></div></div>
           <p>
-            This application was created for ArtTix.
-            It calculates a shift's duration and rounds it to the nearest quarter-hour,
-            per ArtTix reporting requirements.
+            This application was created for ArtTix to simplify the processing of timecards.
+            It calculates shift duration rounded to the quarter-hour mark (per ArtTix reporting requirements).
           </p>
           <p>
             <a href="https://vxxce.github.io/">Github</a>
